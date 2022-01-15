@@ -1,12 +1,23 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <pre>{{ debug(myObj) }}</pre>
   </div>
 </template>
 
 <script>
 export default {
+  mixins: [debug],
+  data() {
+    return {
+      myObj: {
+        some: "data",
+        other: "values",
+      },
+    };
+  },
+  created() {
+    console.log(this.debug(this.myObj));
+  },
   name: "App",
   components: {},
 };
