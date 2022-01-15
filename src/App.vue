@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import debug from "./mixins/debug.js";
 export default {
   mixins: [debug],
   data() {
